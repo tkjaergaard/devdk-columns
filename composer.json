@@ -1,0 +1,22 @@
+{
+    "name": "devdk/columns",
+    "description": "Create post type columns with ease.",
+    "tags": ["Wordpress","devdk"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "t_kjaergaard",
+            "email": "tkj@tkjaergaard.dk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "Devdk": ""
+        }
+    },
+    "target-dir": "Devdk"
+}
