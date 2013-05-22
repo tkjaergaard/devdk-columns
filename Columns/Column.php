@@ -64,9 +64,12 @@ class Column {
      * Set column to be sortable
      * @return self
      */
-    public function sortable()
+    public function sortable($meta_key=null)
     {
         $this->sortable = true;
+
+        if( $meta_key )
+            $this->slug = $meta_key;
 
         return $this;
     }
