@@ -51,6 +51,7 @@ class Column {
         if( count($this->column) > 0 )
             throw new Exception("Column has already been named.");
 
+        if( !$this->slug )
         $this->slug = $slug = strtolower(
                                 preg_replace("/[^a-zA-Z0-9_]/", "-", $name)
                              );
@@ -69,7 +70,14 @@ class Column {
         $this->sortable = true;
 
         if( $meta_key )
+        {
+            $old_slug = $this->slug;
+            $this->column[$meta_key] = $this->column[$old_slug];
+
+            unset($this->column[$old_slug]);
+
             $this->slug = $meta_key;
+        }
 
         return $this;
     }
@@ -83,7 +91,7 @@ class Column {
     {
         $this->callback = $callback;
 
-        return true;
+        return $this;
     }
 
     /**

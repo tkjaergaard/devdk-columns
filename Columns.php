@@ -141,7 +141,7 @@ class Columns {
     {
         $post_type = $this->post_type;
 
-        add_filter( 'manage_edit-movie_sortable_columns',function( $columns ) use($sortable)
+        add_filter( "manage_edit-{$post_type}_sortable_columns", function($columns) use($sortable)
         {
             foreach( $sortable as $column )
             {
@@ -158,7 +158,6 @@ class Columns {
             add_filter('request', function($vars) use($sortable, $post_type)
             {
 
-                /* Check if we're viewing the 'movie' post type. */
                 if ( isset( $vars['post_type'] ) && $post_type == $vars['post_type'] && isset($vars['orderby']) )
                 {
 
