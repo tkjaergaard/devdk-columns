@@ -14,7 +14,7 @@ create, delete, rename and sortable columns.
         });
     });
 
-## Advance usage
+## Advanced usage
 
     use Devdk\Columns;
 
